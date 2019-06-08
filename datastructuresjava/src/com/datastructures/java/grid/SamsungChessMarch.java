@@ -1,14 +1,14 @@
 package com.datastructures.java.grid;
 
 import java.io.BufferedReader;
-import java.io.FileInputStream;
 import java.io.InputStreamReader;
 import java.util.Arrays;
 
 public class SamsungChessMarch {
+
 	public static void main(String[] args) throws Exception {
 		long s = System.currentTimeMillis();
-		System.setIn(new FileInputStream("/workspaces/java/in.txt"));
+		// System.setIn(new FileInputStream("/workspaces/java/in.txt"));
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		int t = Integer.parseInt(br.readLine());
 		for (int i = 0; i < t; i++) {
@@ -80,12 +80,10 @@ public class SamsungChessMarch {
 		int sumAll = 0;
 		if (i == m - 1) {
 			for (int k = j + 1; k < n; k++) {
-				path[idx + k - j] = mat[i][k];
+				path[idx + k - j] = mat[i][k]; 
 			}
-			if (!Arrays.asList(path).contains("x")) {
+			if (!Arrays.asList(path).contains("x") && path.length > 0) {
 				for (int l = 0; l < idx + n - j; l++) {
-					if (path[l].contains("x"))
-						path[l] = "0";
 					sumAll += Integer.parseInt(path[l]);
 				}
 				sumAllPaths.add(sumAll);
@@ -96,10 +94,8 @@ public class SamsungChessMarch {
 			for (int k = i + 1; k < m; k++) {
 				path[idx + k - i] = mat[k][j];
 			}
-			if (!Arrays.asList(path).contains("x")) {
+			if (!Arrays.asList(path).contains("x") && path.length > 0) {
 				for (int l = 0; l < idx + m - i; l++) {
-					if (path[l].contains("x"))
-						path[l] = "0";
 					sumAll += Integer.parseInt(path[l]);
 				}
 				sumAllPaths.add(sumAll);
