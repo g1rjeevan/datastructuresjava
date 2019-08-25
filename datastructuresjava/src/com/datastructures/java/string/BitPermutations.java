@@ -74,5 +74,14 @@ public class BitPermutations {
 		charArray[j] = temp;
 		return String.valueOf(charArray);
 	}
+	/*
+	 * Input 24 1 7 9 3 6 15 21 31 32 47 65 52 85 305 560 189 801 451 296 202 256
+	 * 107 996 257
+	 */
+
+	/*
+	 * Output 1 7 45 3 14 15 186 31 63 315 762 630 2540 28616 36828 5355 85932 35770
+	 * 14308 8925 511 1905 128898 4088
+	 */
 
 }
