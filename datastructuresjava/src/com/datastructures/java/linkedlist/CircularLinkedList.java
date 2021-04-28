@@ -73,8 +73,12 @@ public class CircularLinkedList {
 
 		System.out.println(item + " not present in the list.");
 		return last;
-//		I am a most dynamic application programmer with various knowledge of different programming language. Who always ready to upgrade my skills to provide better solutions for the software product through my analytical analysis and logical thinking.
-//		I worked various number of project where it ranges from android app dev from start to deployment in play store, Web Application dev from end-to-end and backend application. In one of application dev is chrome extension as well which is to get 
+//		I am a most dynamic application programmer with various knowledge of different programming language.
+//		Who always ready to upgrade my skills to provide better solutions for the software product through my
+//		analytical analysis and logical thinking.
+//		I worked various number of project where it ranges from android app dev from start to deployment in play store,
+//		Web Application dev from end-to-end and backend application.
+//		In one of application dev is chrome extension as well which is to get
 //		the data from linkedin by web scraping and post it to client server to build the recruitment data for the client main application.
 	}
 
