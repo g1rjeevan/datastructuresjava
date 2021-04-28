@@ -40,7 +40,7 @@ public class ReverseInteger {
             }
             val+=rem/s;
             counter *= 10;
-            lastDigit(n,counter,val);
+            return lastDigit(n,counter,val);
         }
         return val;
     }
