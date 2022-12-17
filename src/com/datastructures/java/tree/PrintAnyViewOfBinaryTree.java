@@ -30,9 +30,9 @@ public class PrintAnyViewOfBinaryTree {
         PrintLeftView printLeftView = new PrintLeftView();
         printLeftView.printLeftView(nodeWithLevel, result);
         result.entrySet().stream().forEach(integerListEntry -> {
-            System.out.print(integerListEntry.getKey()+"::");
-            integerListEntry.getValue().stream().forEach(s ->{
-                System.out.print(s+" ");
+            System.out.print(integerListEntry.getKey() + "::");
+            integerListEntry.getValue().stream().forEach(s -> {
+                System.out.print(s + " ");
             });
             System.out.println("");
         });

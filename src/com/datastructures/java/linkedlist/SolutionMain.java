@@ -1,21 +1,30 @@
 package com.datastructures.java.linkedlist;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.LinkedHashSet;
+import java.util.Arrays;
 import java.util.List;
-import java.util.Set;
-class Men{
-	public int number;
+import java.util.stream.Collectors;
+
+class Men implements Cloneable {
+    public int number;
+
+    @Override
+    public Object clone() throws CloneNotSupportedException {
+        return super.clone();
+    }
+
+
 }
 
 class A1 {
     public int i;
     protected int j;
-}  
+
+    public String checkNull() throws NullPointerException {
+        final String i = "null";
+        return i;
+    }
+}
 
 
 class B2 extends A1 {
@@ -26,9 +35,92 @@ class B2 extends A1 {
         super.i = 10;
         System.out.println(i + " " + j);
     }
+
+    @Override
+    public String checkNull() throws RuntimeException {
+        return super.checkNull();
+    }
 }
- 
+
+class C1 {
+    private static String j;
+
+    public static void display() {
+        System.out.println(j);
+    }
+}
+
 public class SolutionMain {
+
+
+    public void doIt(int i, Men p) {
+        i = 5;
+        p.number = 8;
+    }
+
+    public static void main(String[] args) throws InterruptedException, CloneNotSupportedException {
+        B2 obj = new B2();
+        obj.i = 1;
+        obj.j = 2;
+        obj.display();
+
+        int x = 0;
+        Men p = new Men();
+        new SolutionMain().doIt(x, p);
+        System.out.println(x + " " + p.number);
+
+        C1 c1 = null;
+        C1.display();
+        Men l = new Men();
+        l.number = 10;
+        System.out.println(l.hashCode());
+
+        Men l1 = (Men) l.clone();
+        System.out.println(l1.hashCode());
+        System.out.println(l1.equals(l));
+        System.out.println(l1.number == l.number);
+
+        List<String> ss = new ArrayList<String>();
+        ss.add("test");
+        ss.add("test1");
+        ss.add("test2");
+        ss.add("test3");
+        ss.stream().distinct().collect(Collectors.toList());
+        System.out.println(Arrays.toString(ss.toArray()));
+//		List<String> inputByLine = new ArrayList<String>();
+//		try {
+//			// Get the object of DataInputStream
+//			InputStreamReader isr = new InputStreamReader(System.in, "UTF-8");
+//			BufferedReader br = new BufferedReader(isr);
+//			String line = br.readLine();
+//	            String s= br.readLine();
+//	            String[] sss = s.split(" ");
+//	            for(String sse: sss){
+//	                inputByLine.add(sse);
+//	            }
+//			int size = 0;
+//			List<Integer> sumInt = new ArrayList<>();
+//
+//			for (int i = 0; i < inputByLine.size(); i++) {
+//
+//					int ss = Integer.parseInt(inputByLine.get(i));
+//					sumInt.add(ss);
+//			}
+//			Collections.sort(sumInt);
+//			Set<Integer> sumHash = new LinkedHashSet<>();
+//			for (int i = 0; i < sumInt.size(); i++) {
+//				sumHash.add((int) sumInt.get(i));
+//			}
+//			int sumHasInt = 0;
+//			for (Integer sum : sumHash) {
+//				sumHasInt += sum;
+//			}
+//			System.out.println(sumHasInt);
+//			isr.close();
+//		} catch (IOException ioe) {
+//			ioe.printStackTrace();
+//		}
+    }
 
 //	public static void main(String[] args) {
 //		Scanner sc = new Scanner(System.in);
@@ -107,54 +199,5 @@ public class SolutionMain {
 //		String xC = builder.toString();
 //		return Integer.parseUnsignedInt(xC);
 //	}
-	
-	public void doIt(int i,Men p) {
-		i=5;
-		p.number = 8;
-	}
-	
-	public static void main(String[] args) throws InterruptedException {
-		B2 obj = new B2();
-        obj.i = 1;
-        obj.j = 2;   
-        obj.display(); 
-		
-		int x=0;
-		Men p =new Men();
-		new SolutionMain().doIt(x,p);
-		System.out.println(x+" "+p.number);
-//		List<String> inputByLine = new ArrayList<String>();
-//		try {
-//			// Get the object of DataInputStream
-//			InputStreamReader isr = new InputStreamReader(System.in, "UTF-8");
-//			BufferedReader br = new BufferedReader(isr);
-//			String line = br.readLine(); 
-//	            String s= br.readLine();  
-//	            String[] sss = s.split(" ");
-//	            for(String sse: sss){
-//	                inputByLine.add(sse);
-//	            }
-//			int size = 0;
-//			List<Integer> sumInt = new ArrayList<>();
-//
-//			for (int i = 0; i < inputByLine.size(); i++) {
-//				
-//					int ss = Integer.parseInt(inputByLine.get(i));
-//					sumInt.add(ss);
-//			}
-//			Collections.sort(sumInt);
-//			Set<Integer> sumHash = new LinkedHashSet<>();
-//			for (int i = 0; i < sumInt.size(); i++) {
-//				sumHash.add((int) sumInt.get(i));
-//			}
-//			int sumHasInt = 0;
-//			for (Integer sum : sumHash) {
-//				sumHasInt += sum;
-//			}
-//			System.out.println(sumHasInt);
-//			isr.close();
-//		} catch (IOException ioe) {
-//			ioe.printStackTrace();
-//		}
-	}
+
 }
