@@ -13,9 +13,14 @@ public class QuickSort {
             last--;
         }
         int[] ar = new int[]{14,11,12,13,16,6,14,9,8,3,1};//array.stream().mapToInt(t -> t).toArray();
+        //array.stream().mapToInt(t -> t).toArray();
         Arrays.stream(ar).forEach(v->System.out.print(v+","));
         System.out.println();
         QuickSort quickSort = new QuickSort();
+        Arrays.stream(quickSort.getQuickSort(ar, 0, ar.length-1)).forEach(v->System.out.print(v+","));
+        ar = new int[]{0,3,7,2,5,8,4,6,0,1};
+        Arrays.stream(ar).forEach(v->System.out.print(v+","));
+        System.out.println();
         Arrays.stream(quickSort.getQuickSort(ar, 0, ar.length-1)).forEach(v->System.out.print(v+","));
     }
 
@@ -54,7 +59,7 @@ public class QuickSort {
         System.out.println("l::"+l);
         System.out.println("h::"+h);
         if(l<h){
-            int j=partition(array, l, h);
+            int j = partition(array, l, h);
             System.out.println("partition j::"+j);
             getQuickSort(array, l, j-1);
             getQuickSort(array, j+1, h);
